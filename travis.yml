@@ -1,2 +1,16 @@
-language: node_js   
-script: npm run ci
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: 0626be18ebd592b8966fc17961278773592b03d9
+  local_dir: build
+  on:
+    branch: master
