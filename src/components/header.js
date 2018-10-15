@@ -3,13 +3,13 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 // Make a component
-const Header = () => {
+const Header = (props) => {
     // destructuring to reference style
     const { textStyle, viewStyle } = styles;
 
     return (
         <View style={viewStyle}>
-            <Text style={textStyle}>Test App!</Text>
+            <Text style={textStyle}>{props.headerText}</Text>
         </View>
     )
 };
